@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #f5f1ee;
+  --color-surface: #fbf8f6;
+  --color-surface-soft: #f1ebe7;
+  --color-border: #d7cec8;
+  --color-text: #242220;
+  --color-text-muted: #6f6862;
+  --color-text-soft: #938a83;
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.45;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.italic-serif {
+  font-family: 'Lora', serif;
+  font-style: italic;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-5deg) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes heroCharReveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.1rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.9s var(--ease-premium);
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.7s var(--ease-premium);
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.9s var(--ease-premium);
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.9s var(--ease-premium);
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.8s var(--ease-premium);
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+/* .bookme {
+  font-family: 'Inter', sans-serif;
+  padding: 8px 20px;
+  border: 1px solid var(--color-text);
+  border-radius: 3px;
+} */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  background-size: 1000px 100%;
+}
+
+.animate-zoom-in {
+  animation: zoomIn 0.7s var(--ease-premium);
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s var(--ease-premium);
+}
+
+.animate-slide-down {
+  animation: slideDown 0.8s var(--ease-premium);
+}
+
+.animate-rotate-in {
+  animation: rotateIn 0.9s var(--ease-premium);
+}
+
+.animate-blur-in {
+  animation: blurIn 0.9s var(--ease-premium);
+}
+
+.hero-word {
+  display: inline-block;
+}
+
+.hero-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, 1.1rem, 0);
+  animation: heroCharReveal 0.8s var(--ease-premium) forwards;
+  will-change: transform, opacity;
+}
+
+.hero-space {
+  display: inline-block;
+}
+
+/* Smooth transitions for interactive elements */
+button, a, input, textarea, select {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Optimize images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Anchor offset for sticky header */
+#cta,
+#portfolio,
+#stats {
+  scroll-margin-top: 96px;
+}
+
+::selection {
+  background: rgba(36, 34, 32, 0.12);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Performance optimizations */
+@media (max-width: 768px) {
+  .animate-scroll {
+    animation-duration: 25s;
+  }
+  
+  button, a, input, textarea, select {
+    transition-duration: 0.2s;
+  }
+}
+
+/* Optimize for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  button, a, input {
+    padding: 0.75rem 1rem;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  a:active {
+    opacity: 0.8;
+  }
+}
+
+/* High DPI screens */
+@media (min-resolution: 2dppx) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
